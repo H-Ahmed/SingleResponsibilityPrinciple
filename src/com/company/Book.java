@@ -4,10 +4,12 @@ public class Book implements BookHandler{
 
     private int numOfPages;
     private String authorName;
+    private BookPersistence bookPersistence;
 
     public Book(String authorName, int numOfPages) {
         this.authorName = authorName;
         this.numOfPages = numOfPages;
+        this.bookPersistence = new BookPersistence();
     }
 
     public int getNumOfPages() {
@@ -43,7 +45,7 @@ public class Book implements BookHandler{
 
     @Override
     public void save() {
-        System.out.println("Saving the book...");
+        bookPersistence.save(this);
     }
     //=======================
 
