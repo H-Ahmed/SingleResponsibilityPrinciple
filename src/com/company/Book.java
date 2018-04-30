@@ -1,6 +1,6 @@
 package com.company;
 
-public class Book {
+public class Book implements BookHandler{
 
     private int numOfPages;
     private String authorName;
@@ -28,18 +28,20 @@ public class Book {
 
     //Not Single Responsibility
     //=======================
-    public void printAndSave() {
-        System.out.println("Printing the book....");
-        System.out.println("Saving the book...");
-    }
+    //    public void printAndSave() {
+    //        System.out.println("Printing the book....");
+    //        System.out.println("Saving the book...");
+    //    }
     //=======================
 
     //Single Responsibility
     //=======================
+    @Override
     public void print() {
         System.out.println("Printing the book....");
     }
 
+    @Override
     public void save() {
         System.out.println("Saving the book...");
     }
